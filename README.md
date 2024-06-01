@@ -4,7 +4,7 @@ Create by [@pxcs.](https://github.com/pxcs/) This tool targeted to get informati
 
 ### Documentation
 
-The rest of documentation and Credit was on separate files.<br>
+Documentation and report will be listed `here` or somewhere else.<br>
 
 - **Testing**<br>
 - **Report**<br>
