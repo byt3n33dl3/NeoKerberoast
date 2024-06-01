@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <PropertyGroup>
+    <Authors>Antao Almada</Authors>
+    <Copyright>Copyright 2019-2021 Antao Almada</Copyright>
+    <LangVersion>latest</LangVersion>
+    <Features>strict</Features>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
