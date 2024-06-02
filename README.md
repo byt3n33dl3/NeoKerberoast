@@ -29,6 +29,53 @@ You can also download the [release](https://github.com/pxcs/BrazilianKarambit/re
 
 ---
 
+### Role for Kerberos attack
+
+[![banners](https://github.com/pxcs/GhostHunterKerberos/assets/151133481/0dabcb6d-774d-4d16-a393-84788ec69b86)](https://github.com/pxcs/KerberossianCracker)
+A senior penetration tester or advanced cyber criminal focusing on network enumeration and Kerberos attacks, having a comprehensive set of tools and features is crucial.
+
+### Key Features and Strengths
+
+#### Kerberos Interaction
+Automated AS-REQ and TGS-REQ, for `automates` the sending of AS-REQ (Authentication Service Requests) and TGS-REQ (Ticket Granting Service Requests) messages to the Kerberos Key Distribution Center (KDC). This streamlines the process of obtaining TGTs and service tickets.
+
+#### Capability
+Extraction and Parsing: It includes functionality to parse and extract relevant information from the `tickets` received, which is essential for further analysis or attacks. The tool can request service tickets for various service accounts, which can then be extracted for offline password cracking. This is a critical component of the Kerberoasting attack. 
+
+### YARA for Enumeration and Kerberoasting Protocol
+The tool primarily used in malware research and detection. However, it can be adapted for various purposes in ~cyber-attacks~, including the detection of specific behaviors such as enumeration and Kerberoasting in a network. Kerberoasting is an attack method that targets the Kerberos authentication protocol used in Windows environments to extract hashed credentials for brute-force cracking. And for Detection enumeration activities often involve scanning for open ports, user accounts, and services. Detecting such activities can involve looking for specific strings or patterns associated with known enumeration tools or behaviors.
+
+#### YARA to detect Kerberoasting activity:
+```
+rule KerberoastingDetection
+{
+    meta:
+        description = "Detects Kerberoasting tools and activities"
+        author = "Username"
+        date = "2020-07-02"
+        reference = "https://github.com/pxcs/KerberossianCracker"
+
+    strings:
+        $rubeus = "Rubeus"
+        $JtR = "John-the-Ripper"
+        $hashcat = "hashcat"
+        $tgsrepcrack = "tgsrepcrack"
+        $gettgssession = "Get-TGSSession"
+        $invoke_kerberoast = "Invoke-Kerberoast"
+        $request_spn = "Request-SPN"
+        $spnrequest = "spnrequest"
+        $kerberoast = "kerberoast"
+
+    condition:
+        any of ($rubeus, $Jtr, $hashcat, $tgsrepcrack, $gettgssession, $invoke_kerberoast, $request_spn, $spnrequest, $kerberoast)
+}
+```
+#### Run YARA protocol:
+```
+yara -r /path/to/rules /path/to/scan
+```
+---
+
 Note: for research and educational purposes only.
 
 Thanks to SharpHound/AD repo and HarpoonHound.
